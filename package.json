@@ -1,11 +1,11 @@
 {
-  "name": "LIVR-Playground",
+  "name": "SellerCrowd-test",
   "version": "0.0.1",
-  "description": "LIVR Playground",
+  "description": "SellerCrowd test",
   "author": {
-    "name": "WebbyLab",
-    "email": "office@webbylab.com",
-    "url": "http://webbylab.com"
+    "name": "St1ma",
+    "email": "kravchenko.anastasiia@gmail.com",
+    "url": "https://github.com/St1ma"
   },
   "private": true,
   "scripts": {
