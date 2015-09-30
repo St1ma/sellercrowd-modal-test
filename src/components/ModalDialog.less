@@ -1,0 +1,240 @@
+.modal-dialog {
+    width: 723px;
+    font-family: Arial;
+
+    .modal-content {
+        .modal-header {
+            border: none;
+        }
+
+        .modal-body {
+            padding-bottom: 40px;
+            .left-container {
+                padding-right: 11px;
+                padding-top: 2px;
+
+                i {
+                    float: right;
+                    font-size: 16px;
+                    color: rgba(35, 31, 32, 0.3)
+                }
+            }
+            .main-content {
+                padding-left: 0;
+
+                h2 {
+                    font-size: 17px;
+                    margin-top: 3px;
+                }
+
+                .user-title {
+                    margin-top: 28px;
+                    .user-photo {
+                        width: 37px;
+                        height: 37px;
+                    }
+                    .user-name {
+                        vertical-align: top;
+                        width: 255px;
+                        height: 37px;
+                        font-size: 15.45px;
+                        line-height: 18px;
+                        margin-left: 10px;
+                    }
+                    .user-edit {
+                        vertical-align: top;
+                        color: #4663d1;
+                        font-size: 12px;
+                        i {
+                            margin: 0 2px;
+                        }
+                    }
+                }
+
+                .inline-block {
+                    display: inline-block;
+                }
+
+                .job-message {
+                    margin-top: 23px;
+
+                    .send-to {
+                        margin-bottom: 23px;
+                        label {
+                            margin-bottom: 0px;
+                            line-height: 12px;
+                        }
+                        #addressee {
+                            margin-top: 1px;
+                            font-size: 15px;
+                            line-height: 15px;
+                        }
+                    }
+
+                    textarea {
+                        padding: 12px 25px 19px 13px;
+                        width: 550px;
+                        font-size: 13px;
+                        line-height: 17px;
+                        border-radius: 0;
+                        resize: none;
+                    }
+
+                    input[type='checkbox'], input[type='radio'] {
+                        -webkit-appearance: none;
+                        border: 1px solid #cacece;
+                        padding: 7px;
+                        border-radius: 3px;
+                        display: inline-block;
+                    }
+
+                    input[type='checkbox']:checked {
+                        border: 1px solid #adb8c0;
+                        box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+                        color: #99a1a7;
+
+                        &:after {
+                            content: '\2714';
+                            font-size: 14px;
+                            position: absolute;
+                            top: 0px;
+                            left: 2px;
+                            color: #666666;
+                        }
+                    }
+
+                    input[type='radio'] {
+                        border-radius: 50%;
+
+                        &:checked {
+                            color: #666666;
+                            border: 1px solid #adb8c0;
+
+                            &:after {
+                                content: ' ';
+                                width: 8px;
+                                height: 8px;
+                                border-radius: 50%;
+                                position: absolute;
+                                top: 3px;
+                                background: #666666;
+                                text-shadow: 0px;
+                                left: 3px;
+                                font-size: 32px;
+                            }
+                        }
+                    }
+
+                    .checkbox {
+                        margin-top: 18px;
+                        label {
+                            padding-left: 18px;
+                            span {
+                                margin-left: 5px;
+                                vertical-align: -webkit-baseline-middle;
+                                font-size: 12.3px;
+                            }
+
+                        }
+                    }
+
+                    .small {
+                        font-size: 12px;
+                        color: #656565;
+                        font-weight: 100;
+                        margin-bottom: 3px;
+                    }
+
+                    .job-including {
+                        margin-top: 13px;
+                        &> * {
+                            margin-left: 22px;
+                        }
+
+                        label.radio {
+                            margin-left: 17px;
+                            span {
+                                vertical-align: -webkit-baseline-middle;
+                                margin-left: 6px;
+                            }
+                        }
+
+                        #selectJob {
+                            margin: 7px 0 17px 23px;;
+                            height: 29px;
+                            width: 287px;
+                            font-size: 12px;
+                            padding: 0px 4px;
+                        }
+
+                        .new-job-group {
+                            margin-top: 9px;
+
+                            #jobTitle {
+                                font-size: 13px;
+                                padding-top: 7px;
+                                padding-left: 13px;
+                                height: 36px;
+                                width: 551px;
+                                margin-top: 0px;
+                                margin-bottom: 15px;
+                                border-radius: 0;
+                            }
+
+                            textarea {
+                                padding-bottom: 15px;
+                            }
+                        }
+                    }
+
+                    .left-spacing {
+                        margin-left: 22px;
+                    }
+
+                    #compensation {
+                        margin-top: 3px;
+                        input {
+                            width: 48px;
+                            height: 36px;
+                            border-radius: 0;
+                            margin: 0 8px 0 4px;
+                            padding-right: 10px;
+                        }
+
+                        .compenstation-separate {
+                            margin-right: 15px;
+                        }
+                    }
+
+                    .bottom-align {
+                        margin-left: 24px;
+                        margin-bottom: -8px;
+                        margin-top: 16px;
+
+                        span {
+                            vertical-align: -webkit-baseline-middle;
+                            margin-left: 3px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .modal-footer {
+            background-color: #f5f5f5;
+            padding-top: 7px;
+            padding-bottom: 13px;
+
+            button {
+                float: left;
+                margin-left: 42px;
+                height: 40px;
+                font-size: 16px;
+                font-weight: 600;
+                width: 86px;
+                border-radius: 8px;
+            }
+        }
+    }
+}
+
