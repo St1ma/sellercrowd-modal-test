@@ -31,9 +31,11 @@ const App = React.createClass({
                     <h2>Test project for SellerCrowd</h2>
                     <p><b>Task:</b> 25070 </p>
                     <p><b>Design:</b> https://app.zeplin.io/project.html#pid=55ef71750324c30016019c4a&sid=55ef7188c31dcc7d3197d16c</p>
+
                     <Button handleClick = { this.toggleModalVisibility }
                             type        = 'default'
                             value       = 'Modal button' />
+
                     <ModalDialog showModal   = { this.state.isModalVisible }
                                  handleClick = { this.toggleModalVisibility } />
                </div>;

@@ -10,10 +10,36 @@ import './ModalDialog.less';
 const USER_LOGO = require("./ModalDialog/user-img.png");
 
 const ModalDialog = React.createClass({
+    getInitialState() {
+        return {
+            radioExisting: false,
+            radioNew: true,
+            includeJobDescription: true,
+            saveJobDescription: true,
+            postJob: false
+        }
+    },
+
     handleClick() {
         if (this.props.handleClick) {
             this.props.handleClick();
         }
+    },
+
+    changeRadio() {
+        this.setState({
+            radioExisting: !this.state.radioExisting,
+            radioNew: !this.state.radioNew
+        });
+    },
+
+    toggleCheckbox(e) {
+        let name = e.currentTarget.id;
+        this.setState({
+            includeJobDescription: name == "includeJobDescription" ? !this.state.includeJobDescription : this.state.includeJobDescription,
+            saveJobDescription: name == "saveJobDescription" ? !this.state.saveJobDescription : this.state.saveJobDescription,
+            postJob: name == "postJob" ? !this.state.postJob : this.state.postJob
+        });
     },
 
     render() {
@@ -21,6 +47,7 @@ const ModalDialog = React.createClass({
             <Modal show   = { this.props.showModal }
                    onHide = { this.handleClick } >
                 <Modal.Header closeButton />
+
                 <Modal.Body>
                     <div className="row">
                         <div className="col-md-1 left-container">
@@ -53,24 +80,22 @@ const ModalDialog = React.createClass({
 
                                 <div className="checkbox">
                                     <label className="small">
-                                        <input type="checkbox" checked id="includeJobDescription"/> I’d like to include a job description with my message.
+                                        <input type="checkbox" checked={ this.state.includeJobDescription } onChange={ this.toggleCheckbox } id="includeJobDescription"/> I’d like to include a job description with my message.
                                     </label>
                                 </div>
 
                                 <div className="form-group job-including">
                                     <label className="radio small">
-                                        <input type="radio" id="existingJob" value="existingJob" /> Use an existing job description
+                                        <input name='jobtype' type="radio" id="existingJob" checked={ this.state.radioExisting } onChange={ this.changeRadio } value="existingJob" /> Use an existing job description
                                     </label>
                                     <select className="form-control" id="selectJob">
                                         <option selected>Senior Sales Executive</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                        <option>Middle Sales Executive</option>
+                                        <option>Junior Sales Executive</option>
                                     </select>
 
                                     <label className="radio small">
-                                        <input type="radio" id="newJob" checked value="newJob" /> Create a new job description
+                                        <input name='jobtype' type="radio" id="newJob" checked={ this.state.radioNew } onChange={ this.changeRadio } value="newJob" /> Create a new job description
                                     </label>
 
                                     <div className="form-group new-job-group">
@@ -99,13 +124,13 @@ const ModalDialog = React.createClass({
 
                                 <div className="checkbox left-spacing bottom-align">
                                     <label className="small">
-                                        <input type="checkbox" checked id="saveJobDescription" /> Save this job description
+                                        <input type="checkbox" checked={ this.state.saveJobDescription } onChange={ this.toggleCheckbox } id="saveJobDescription" /> Save this job description
                                     </label>
                                 </div>
 
                                 <div className="checkbox left-spacing bottom-align">
                                     <label className="small">
-                                        <input type="checkbox" id="postJob" /> I’d like to post this job on SellerCrowd
+                                        <input type="checkbox" checked={ this.state.postJob } onChange={ this.toggleCheckbox } id="postJob" /> I’d like to post this job on SellerCrowd
                                     </label>
                                 </div>
 
@@ -113,6 +138,7 @@ const ModalDialog = React.createClass({
                         </div>
                     </div>
                 </Modal.Body>
+
                 <Modal.Footer>
                     <Button handleClick = { this.handleClick }
                             type        = 'primary'
